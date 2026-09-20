@@ -1,10 +1,10 @@
 SLE-2: Profiling Report
 Course: 02AML204 – Introduction to Artificial Intelligence
-PRN: [ENTER YOUR PRN HERE]
-Name: [ENTER YOUR FULL NAME HERE]
-Division: [A or B]
-Date: [TODAY'S DATE]
-GitHub Link (optional): [ENTER LINK OR LEAVE BLANK]
+PRN: 25UAM023
+Name: Swalehin Kausar Amin Shaikh
+Division: A
+Date: 20-09-2026
+GitHub Link (optional): https://github.com/s91918551-hue/AI-Agent-Project
 
 --------------------------------------------------
 
