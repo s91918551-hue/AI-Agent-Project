@@ -99,34 +99,37 @@ def run_astar(start_state):
 if __name__ == "__main__":
     start_puzzle = (1, 2, 3, 4, 0, 6, 7, 5, 8)
 
-    # Profiling BFS
+    # Run BFS 3 times
     bfs_times, bfs_nodes = [], []
     for _ in range(3):
         t, n = run_bfs(start_puzzle)
         bfs_times.append(t)
         bfs_nodes.append(n)
 
-    # Profiling A*
+    # Run A* 3 times
     astar_times, astar_nodes = [], []
     for _ in range(3):
-        t, n = run_astar(start_parser := start_puzzle)
+        t, n = run_astar(start_puzzle)
         astar_times.append(t)
         astar_nodes.append(n)
 
-    avg_bfs_time = sum(bfs_times) / 3
-    avg_astar_time = sum(astar_times) / 3
+    # Calculate Best (min), Worst (max), and Average (sum/3)
+    best_bfs = min(bfs_times)
+    worst_bfs = max(bfs_times)
+    avg_bfs = sum(bfs_times) / 3
 
-    print("\n" + "=" * 50)
-    print("           SLE-2 PROFILING RESULTS            ")
-    print("=" * 50)
-    print(
-        f"{'Metric':<20} | {'BFS (Algorithm A)':<15} | {'A* (Algorithm B)':<15}"
-    )
+    best_astar = min(astar_times)
+    worst_astar = max(astar_times)
+    avg_astar = sum(astar_times) / 3
+
+    # Output results
+    print("\n" + "=" * 55)
+    print("           SLE-2 PROFILING RESULTS (3 RUNS)           ")
+    print("=" * 55)
+    print(f"{'Metric':<20} | {'BFS (Algorithm A)':<15} | {'A* (Algorithm B)':<15}")
     print("-" * 55)
-    print(
-        f"{'Avg Time (ms)':<20} | {avg_bfs_time:<15.4f} | {avg_astar_time:<15.4f}"
-    )
-    print(
-        f"{'Nodes Expanded':<20} | {bfs_nodes[0]:<15} | {astar_nodes[0]:<15}"
-    )
-    print("=" * 50 + "\n")
+    print(f"{'Best Time (ms)':<20} | {best_bfs:<15.4f} | {best_astar:<15.4f}")
+    print(f"{'Worst Time (ms)':<20} | {worst_bfs:<15.4f} | {worst_astar:<15.4f}")
+    print(f"{'Average Time (ms)':<20} | {avg_bfs:<15.4f} | {avg_astar:<15.4f}")
+    print(f"{'Nodes Expanded':<20} | {bfs_nodes[0]:<15} | {astar_nodes[0]:<15}")
+    print("=" * 55 + "\n")
