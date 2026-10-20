@@ -1,0 +1,20 @@
+
+@startuml MazeContext
+left to right direction
+skinparam packageStyle rectangle
+
+actor "User" as User
+
+rectangle "Maze Solving System" {
+  usecase "Enter Maze" as U1
+  usecase "Select BFS or DFS" as U2
+  usecase "Find Path" as U3
+  usecase "Display Solution" as U4
+}
+
+User --> U1
+User --> U2
+U1 --> U3
+U2 --> U3
+U3 --> U4
+@enduml
